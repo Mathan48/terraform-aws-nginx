@@ -15,7 +15,7 @@ resource "aws_instance" "web" {
   connection {
     type        = "ssh"
     user        = "ec2-user"
-    private_key = file("./last.pem")
+    private_key = file(".terraform/modules/nginx/last.pem")
     host        = self.public_ip
   }
   provisioner "remote-exec" {
